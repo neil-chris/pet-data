@@ -3,7 +3,7 @@ package sheridan.chrisnei.assingment2.domain;
 /**
  * An enum representing a pet kind
  */
-public enum PetKind {
+public enum Kind {
 
     /**
      * A constant representing a dog
