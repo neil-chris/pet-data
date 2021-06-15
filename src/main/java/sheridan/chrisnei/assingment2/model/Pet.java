@@ -14,8 +14,8 @@ public class Pet {
     private int id;
     @NotBlank(message = "Name cannot be blank")
     private String name;
-    private PetKind kind;
-    private PetGender gender;
+    private Kind kind;
+    private Gender gender;
 
     /**
      * Creates a pet
@@ -30,25 +30,25 @@ public class Pet {
      * @param kind
      * @param gender
      */
-    public Pet(String name, PetKind kind, PetGender gender) {
+    public Pet(String name, Kind kind, Gender gender) {
         this.name = name;
         this.kind = kind;
         this.gender = gender;
     }
 
-    public PetKind getKind() {
+    public Kind getKind() {
         return kind;
     }
 
-    public void setKind(PetKind kind) {
+    public void setKind(Kind kind) {
         this.kind = kind;
     }
 
-    public PetGender getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(PetGender gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 }
