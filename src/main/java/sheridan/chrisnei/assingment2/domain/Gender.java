@@ -3,7 +3,7 @@ package sheridan.chrisnei.assingment2.domain;
 /**
  * An enum representing the gender of a pet
  */
-public enum PetGender {
+public enum Gender {
 
     /**
      * A constant representing a female gender
