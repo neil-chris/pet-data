@@ -1,4 +1,4 @@
-package sheridan.chrisnei.assingment2.domain;
+package sheridan.chrisnei.assingment2.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

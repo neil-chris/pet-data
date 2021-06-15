@@ -1,4 +1,4 @@
-package sheridan.chrisnei.assingment2.domain;
+package sheridan.chrisnei.assingment2.model;
 
 /**
  * An enum representing a pet kind

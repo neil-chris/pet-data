@@ -1,4 +1,4 @@
-package sheridan.chrisnei.assingment2.domain;
+package sheridan.chrisnei.assingment2.model;
 
 /**
  * An enum representing the gender of a pet
