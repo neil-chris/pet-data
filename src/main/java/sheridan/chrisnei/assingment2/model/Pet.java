@@ -16,6 +16,7 @@ public class Pet {
     private String name;
     private Kind kind;
     private Gender gender;
+    private boolean vaccinated;
 
     /**
      * Creates a pet
@@ -30,7 +31,7 @@ public class Pet {
      * @param kind
      * @param gender
      */
-    public Pet(String name, Kind kind, Gender gender) {
+    public Pet(String name, Kind kind, Gender gender, boolean vaccinated) {
         this.name = name;
         this.kind = kind;
         this.gender = gender;
@@ -50,5 +51,13 @@ public class Pet {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    public boolean isVaccinated() {
+        return vaccinated;
+    }
+
+    public void setVaccinated() {
+        this.vaccinated = vaccinated;
     }
 }
