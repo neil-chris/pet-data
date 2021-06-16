@@ -73,7 +73,7 @@ public class Pet {
         return vaccinated;
     }
 
-    public void setVaccinated() {
+    public void setVaccinated(boolean vaccinated) {
         this.vaccinated = vaccinated;
     }
 }
