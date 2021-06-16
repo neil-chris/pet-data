@@ -12,7 +12,7 @@
     <artifactId>assingment2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Pet Data</name>
-    <description>Demo project for Spring Boot</description>
+    <description>A simple application for managing pet information</description>
     <properties>
         <java.version>11</java.version>
     </properties>
