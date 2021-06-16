@@ -31,12 +31,19 @@ public class Pet {
      * @param kind
      * @param gender
      */
-    public Pet(String name, Kind kind, Gender gender, boolean vaccinated) {
+    public Pet(int id, String name, Kind kind, Gender gender, boolean vaccinated) {
         this.name = name;
         this.kind = kind;
         this.gender = gender;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public Kind getKind() {
         return kind;
     }
