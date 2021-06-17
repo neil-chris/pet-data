@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import sheridan.chrisnei.assingment2.model.Gender;
 import sheridan.chrisnei.assingment2.model.Pet;
@@ -39,8 +40,11 @@ public class PetController {
     }
 
     @PostMapping("/create")
-    public String addPet( @Valid Pet pet, BindingResult result, Model model) {
+    public String addPet( @Valid Pet pet, Errors errors) {
         log.info("Invoked PetController.addPet() method");
+        if (errors.hasErrors()) {
+            return "create-pet";
+        }
         petService.addPet(pet);
         return "redirect:/pet/all";
     }
