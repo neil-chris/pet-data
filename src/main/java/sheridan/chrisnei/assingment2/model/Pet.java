@@ -16,11 +16,13 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    @NotBlank(message = "Name cannot be blank")
+    @NotBlank(message = "Name cannot be blank!")
     @Column(name = "name")
     private String name;
+    @Enumerated(EnumType.STRING)
     @Column(name = "kind")
     private Kind kind;
+    @Enumerated(EnumType.STRING)
     @Column(name = "gender")
     private Gender gender;
     @Column(name = "vaccinated")
