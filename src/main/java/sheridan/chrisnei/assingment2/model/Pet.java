@@ -9,15 +9,21 @@ import javax.validation.constraints.NotBlank;
  */
 @Entity
 @Slf4j
+@Table(name="pet")
 public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
     @NotBlank(message = "Name cannot be blank")
+    @Column(name = "name")
     private String name;
+    @Column(name = "kind")
     private Kind kind;
+    @Column(name = "gender")
     private Gender gender;
+    @Column(name = "vaccinated")
     private boolean vaccinated;
 
     /**
