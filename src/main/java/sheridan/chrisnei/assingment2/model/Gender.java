@@ -1,8 +1,11 @@
 package sheridan.chrisnei.assingment2.model;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * An enum representing the gender of a pet
  */
+@Slf4j
 public enum Gender {
 
     /**
@@ -11,6 +14,7 @@ public enum Gender {
     FEMALE {
         @Override
         public String toString() {
+            log.info("Gender.FEMALE.toString()");
             return "Female";
         }
     },
@@ -21,7 +25,8 @@ public enum Gender {
     MALE {
         @Override
         public String toString() {
-            return "MALE";
+            log.info("Gender.MALE.toString()");
+            return "Male";
         }
     }
 }
