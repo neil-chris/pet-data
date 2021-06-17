@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="ISO-8859-1">
-  <title>Edit Pet</title>
+  <title>Add Pet</title>
   <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -13,26 +13,29 @@
   <h1>Pet Data Application</h1>
   <hr>
   <h2>Add Pet</h2>
-  <form action="#" th:action="@{/updatePet}" th:object="${pet}"
-        method="POST">
-    <input type="text" th:field="*{name}"
-           placeholder="Enter pet name" class="form-control mb-4 col-4">
-    <select>
+  <form th:object="${pet}" method="POST">
+    <input type="text" th:field="*{name}" placeholder="Enter pet name" class="form-control mb-4 col-4">
+    <div class="alert alert-warning" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+    <label class="form-check-label" for="inlineRadio1">Kind</label>
+    <select th:field="*{kind}">
       <option th:each="kind : ${T(sheridan.chrisnei.assingment2.model.Kind).values()}"
-              th:value="${kind}"
-              th:text="${kind}">
+              th:value="${kind.name()}"
+              th:text="${kind.toString()}">
       </option>
     </select>
+    <br></br>
+    <label class="form-check-label" for="inlineRadio1">Gender</label>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" th:field="*{kind}" th:value="${T(sheridan.chrisnei.assingment2.model.Gender).MALE.name()}">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" th:field="*{gender}" th:value="${T(sheridan.chrisnei.assingment2.model.Gender).MALE.name()}">
       <label class="form-check-label" for="inlineRadio1">Male</label>
     </div>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" th:field="*{kind}" th:value="${T(sheridan.chrisnei.assingment2.model.Gender).FEMALE.name()}">
+      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" th:field="*{gender}" th:value="${T(sheridan.chrisnei.assingment2.model.Gender).FEMALE.name()}" checked={true}>
       <label class="form-check-label" for="inlineRadio2">Female</label>
     </div>
+    <br></br>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" th:field="*{vaccinated}" value="" id="defaultCheck1">
+      <input class="form-check-input" type="checkbox" th:selected="*{vaccinated} ? 'true' : 'false'" value="false" id="defaultCheck1">
       <label class="form-check-label" for="defaultCheck1">
         Vaccinated
       </label>
@@ -40,7 +43,7 @@
     <button type="submit" class="btn btn-info col-2">Save</button>
   </form>
   <hr>
-  <a th:href = "@{/}"> Back to Pet List</a>
+  <a th:href = "@{/pet/all}"> Back to Pet List</a>
 </div>
 </body>
 </html>
