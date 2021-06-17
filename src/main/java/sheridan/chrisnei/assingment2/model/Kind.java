@@ -1,8 +1,11 @@
 package sheridan.chrisnei.assingment2.model;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * An enum representing a pet kind
  */
+@Slf4j
 public enum Kind {
 
     /**
@@ -11,6 +14,7 @@ public enum Kind {
     DOG {
         @Override
         public String toString() {
+            log.info("Invoked Kind.DOG.toString() method");
             return "Dog";
         }
     },
@@ -21,6 +25,7 @@ public enum Kind {
     CAT {
         @Override
         public String toString() {
+            log.info("Invoked Kind.CAT.toString()");
             return "Cat";
         }
     },
@@ -31,6 +36,7 @@ public enum Kind {
     RABBIT {
         @Override
         public String toString() {
+            log.info("Invoked Kind.RABBIT.toString()");
             return "Rabbit";
         }
     }
